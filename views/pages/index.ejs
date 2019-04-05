@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<script src="/knockout.js"></script>
+<script src="/axios.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label for="input">Digite um texto</label>
+    <input type="text" id="input" data-bind="value: input" />
+    <button data-bind="click: enviaDados">Chamar</button>
+    <!-- ko if: result -->
+    <p data-bind="text: 'Aplicação: ' + result()[7]"></p>
+    <p data-bind="text: 'Apresentação: ' + result()[6]"></p>
+    <p data-bind="text: 'Sessão: ' + result()[5]"></p>
+    <p data-bind="text: 'Transporte: ' + result()[4]"></p>
+    <p data-bind="text: 'Rede: ' + result()[3]"></p>
+    <p data-bind="text: 'Enlace: ' + result()[2]"></p>
+    <p data-bind="text: 'Física: ' + result()[1]"></p>
+    <!-- /ko -->
+</body>
+</html>
+
+<script>
+    var ViewModel = function() {
+        var self = this;
+        self.input = ko.observable();
+        self.result = ko.observable(null);
+        self.enviaDados = function() {
+            axios.post('/', { text: self.input() }).then(function(response) {
+                self.result(response.data);
+            })
+        };
+    };
+
+    var vm = new ViewModel();
+    ko.applyBindings(vm);
+</script>
