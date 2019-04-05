@@ -13,13 +13,15 @@
         <input type="text" id="input" data-bind="value: input" class="input"/>
         <button data-bind="click: enviaDados" class="button">Chamar</button>
         <!-- ko if: result -->
-        <p data-bind="text: 'Aplicação: ' + result()[7]"></p>
-        <p data-bind="text: 'Apresentação: ' + result()[6]"></p>
-        <p data-bind="text: 'Sessão: ' + result()[5]"></p>
-        <p data-bind="text: 'Transporte: ' + result()[4]"></p>
-        <p data-bind="text: 'Rede: ' + result()[3]"></p>
-        <p data-bind="text: 'Enlace: ' + result()[2]"></p>
-        <p data-bind="text: 'Física: ' + result()[1]"></p>
+        <ul class="list">
+            <li class="item" data-bind="text: 'Aplicação: ' + result()[7]"></li>
+            <li class="item" data-bind="text: 'Apresentação: ' + result()[6]"></li>
+            <li class="item" data-bind="text: 'Sessão: ' + result()[5]"></li>
+            <li class="item" data-bind="text: 'Transporte: ' + result()[4]"></li>
+            <li class="item" data-bind="text: 'Rede: ' + result()[3]"></li>
+            <li class="item" data-bind="text: 'Enlace: ' + result()[2]"></li>
+            <li class="item" data-bind="text: 'Física: ' + result()[1]"></li>
+        </ul>
         <!-- /ko -->
     </div>
 </body>
