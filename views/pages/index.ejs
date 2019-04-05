@@ -19,7 +19,7 @@
         <button data-bind="click: enviaDados" class="button">Chamar</button>
         <!-- ko if: result -->
         <ul class="list">
-            <li class="item" data-bind="text: 'Aplicação: ' + result()[7]"></li>
+            <li class="item" data-bind="text: 'Aplicação: ' + result()[7]['message']"></li>
             <li class="item" data-bind="text: 'Apresentação: ' + result()[6]"></li>
             <li class="item" data-bind="text: 'Sessão: ' + result()[5]"></li>
             <li class="item" data-bind="text: 'Transporte: ' + result()[4]"></li>

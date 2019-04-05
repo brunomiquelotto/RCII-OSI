@@ -1,5 +1,7 @@
-var fn = function(req, res, next) {
-    req.body = { 7: req.body.text };
+var fn = function(req, res, next) {   
+    var Application = require('../models/Application');
+    
+    req.body[7] = new Application(req.body.text);
     console.log('Passei na camada Aplicaçao');
     next();
 };
