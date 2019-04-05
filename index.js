@@ -10,6 +10,7 @@ var physicalMiddleware = require('./middlewares/physical');
 
 const app = express();
 app.set('view engine', 'ejs');
+app.use('/static', express.static(__dirname + '/static'));
 app.get('/knockout.js', function(req, res) {
     res.sendFile(__dirname + '/node_modules/knockout/build/output/knockout-latest.js');
 });

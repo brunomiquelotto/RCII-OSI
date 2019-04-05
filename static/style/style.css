@@ -1,0 +1,28 @@
+.button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.input {
+    border: none;
+    padding: 5px;
+    background-color: #1a1a1a;
+    color: #aaa;
+}
+
+label {
+    color: #aaa;
+}
+
+body {
+    background-color: #222;
+}
+
+.card {
+    margin-left: 5vw;
+    width: 90vw;
+    margin-top: 5vh;
+    height: 90vh;
+    background-color: #2e2e2e;
+}
