@@ -20,12 +20,6 @@ class Presentation {
     setCodeData(value){
         this.codeData = value;
     }
-    setFormatData(value){
-        this.formatData = value;
-    }
-    setConvCharacters(value){
-        this.convCharacters = value;
-    }
     convertData(message){
         message = String(message)
         let qty = message.split("").length;
@@ -41,8 +35,22 @@ class Presentation {
             }
             output += " ";
         }
-        return output;
-
+        this.message = output
+    }
+    undoConvertData(message){
+        message = String(message);
+        let qty = message.split("").length;
+        var index = 0;
+        var output = "";
+        while (index <= qty){
+            if (index + 1 > qty) {
+                break;
+            }else{
+                output += message.substring(index, index+2);
+                index += 2
+            }
+        }
+        this.message = output
     }
 };
 module.exports = Presentation;
