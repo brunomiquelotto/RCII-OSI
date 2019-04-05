@@ -1,18 +1,42 @@
 class Presentation {
-    constructor(message){
-        this.message = String(message);
-        this.responsability = "Responsible for delivering and formatting information from the application layer to later!";
+    constructor(){
+        this.message;
+        this.responsability;
+        this.encriptData;
+        this.codeData;
+        this.formatData;
+        this.convCharacters;
     }
-    convertData(){
-        let qty = this.message.split("").length;
+    setMessage(value){
+        this.message = value
+    }
+    setResponsability(value){
+        this.responsability = value;
+    }
+
+    setEncryptData(value){
+        this.encriptData = value;
+    }
+    setCodeData(value){
+        this.codeData = value;
+    }
+    setFormatData(value){
+        this.formatData = value;
+    }
+    setConvCharacters(value){
+        this.convCharacters = value;
+    }
+    convertData(message){
+        message = String(message)
+        let qty = message.split("").length;
         var index = 0;
         var output = "";
         while (index < qty){
             if (index + 1 > qty) {
-                output += this.message[index];
+                output += message[index];
                 break;
             } else {
-                output += this.message.substring(index, index+2);
+                output += message.substring(index, index+2);
                 index += 2;
             }
             output += " ";

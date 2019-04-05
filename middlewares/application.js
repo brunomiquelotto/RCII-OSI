@@ -3,7 +3,7 @@ var fn = function(req, res, next) {
     var application = new Application(req.body.text)
 
     application.setMessage(req.body.text);
-    application.setResponsability("Responsible for the message of the process!");
+    application.setResponsability("Responsible for the message of the process");
     application.setCommunicateProcess("Communication between processes");
     application.setManageNetwork("Managing Network");
     application.setShareResources("Sharing resources");

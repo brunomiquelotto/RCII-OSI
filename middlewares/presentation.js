@@ -1,8 +1,16 @@
 var fn = function(req, res, next) {
+    const Presentation = require('../models/Presentation');
+    var presentation = new Presentation();
 
-    var Presentation = require('../models/Presentation');
+    presentation.setMessage(req.body.text);
+    presentation.setResponsability("Responsible for delivering and formatting information from the application layer to later");
+    presentation.setEncryptData ("Encrypting data");
+    presentation.setCodeData ("Encoding data");
+    presentation.setFormatData ("Formatting data");
+    presentation.setConvCharacters ("Converting data");
+    presentation.convertData(req.body.text)
 
-    req.body[6] = new Presentation(req.body.text).convertData();
+    req.body[6] = presentation;
     console.log('Passei na camada Apresentacao');
     next();
 };
