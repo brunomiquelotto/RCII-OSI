@@ -2,9 +2,9 @@ var fn = function(req, res, next) {
     const Physical = require('../models/Physical');
     var physical = new Physical;
 
-    physical.setMessage(req.body.text);
+    physical.setMessage(req.body[2]['message']);
     physical.setResponsability('Responsible for delivering and formatting information from the application layer to later');
-    physical.setBits(1001110);
+    physical.setBits();
     physical.setConexao('Connecting');
     physical.setConnection('Connected');
 

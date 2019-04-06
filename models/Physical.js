@@ -16,8 +16,15 @@ class Physical {
         this.responsability = value;
     }
 
-    setBits(value){
-        this.bits = value;
+    setBits(){
+        const input = String(this.message);
+        var length = input.length,
+            output = [];
+        for (var i = 0;i < length; i++) {
+            var bin = input[i].charCodeAt().toString(2);
+            output.push(Array(8-bin.length+1).join("0") + bin);
+        }
+        this.bits = output.join(" ");
     }
 
     setConexao(value){

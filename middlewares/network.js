@@ -2,7 +2,7 @@ var fn = function(req, res, next) {
     const Network = require('../models/Network');
     var network = new Network();
 
-    network.setMessage(req.body.text);
+    network.setMessage(req.body[4]['message']);
     network.setResponsability('It aims to provide end-to-end communication support for the upper layers.');
     network.setSelectRoute('Selected route');
     network.setDirectPackage('Targeted Package');

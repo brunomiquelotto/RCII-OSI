@@ -2,7 +2,7 @@ var fn = function(req, res, next) {
     const Link = require('../models/Link');
     var link = new Link();
 
-    link.setMessage(req.body.text);
+    link.setMessage(req.body[3]['message']);
     link.setResponsability('Responsible for the message of the process');
     link.setFlow("Proceeding with the process");
     link.validateError(true);

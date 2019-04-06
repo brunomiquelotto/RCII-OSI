@@ -2,7 +2,7 @@ var fn = function(req, res, next) {
     const Presentation = require('../models/Presentation');
     var presentation = new Presentation();
 
-    presentation.setMessage(req.body.text);
+    presentation.setMessage(req.body[7]['message']);
     presentation.setResponsability("Responsible for delivering and formatting information from the application layer to later");
     presentation.setEncryptData ("Encrypting data");
     presentation.setCodeData ("Encoding data");
