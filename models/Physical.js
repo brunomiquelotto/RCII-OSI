@@ -4,28 +4,28 @@ class Physical {
         this.message;
         this.responsability;
         this.bits;
-        this.conexao;
+        this.connection;
 
     }
 
     setMessage(value){
-        this.message = value
+        this.message = value;
     }
 
     setResponsability(value){
-        this.responsability = value
+        this.responsability = value;
     }
 
-    setBits(){
-        return bits;
+    setBits(value){
+        this.bits = value;
     }
 
     setConexao(value){
-        this.conexao = value;
+        this.connection = value;
     }
 
-    setIsConexao(){
-        return this.setIsConexao;
+    setConnection(value){
+       this.connection = value;
     }
 
 };

@@ -3,8 +3,8 @@ class Link {
     constructor(){
         this.message;
         this.responsability;
-        this.selecionarRota;
-        this.direcionarPacote;
+        this.error;
+        this.flow;
     }
 
     setMessage(value){
@@ -15,14 +15,17 @@ class Link {
         this.responsability = value
     }
 
-    setSelecionarRota(value){
-        this.selecionarRota = value;
+    setFlow (value) {
+        this.flow = value;
     }
 
-    setDirecionarPacote(){
-        return direcionarPacote;
+    validateError(value){
+        if(value === true){
+            this.error = "Fixed error."
+        }else{
+            this.error = "No mistakes in the process."
+        }
     }
-
 
 };
 module.exports = Link;

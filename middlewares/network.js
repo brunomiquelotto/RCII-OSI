@@ -1,12 +1,13 @@
 var fn = function(req, res, next) {
-    const Application = require('../models/Network');
-    var network = new Network(req.res.body);
+    const Network = require('../models/Network');
+    var network = new Network();
 
-    network.setMenssage(req.res.body);
-    network.setResponsability('Responsible for the message of the process');
-    network.setSelecionarRota('Selecionando Melhor rota');
-    network.setDirecionarPacote('Direcionando pacote');
-    
+    network.setMessage(req.body.text);
+    network.setResponsability('It aims to provide end-to-end communication support for the upper layers.');
+    network.setSelectRoute('Selected route');
+    network.setDirectPackage('Targeted Package');
+
+    req.body[3] = network;
     console.log('Passei na camada de Rede');
     next();
 };

@@ -3,33 +3,30 @@ class Transport {
     constructor(){
         this.message;
         this.responsability;
-        this.entregarDados;
-        this.segmentarDados;
-        this.transmitirDados;
+        this.deliverData;
+        this.segmentData;
+        this.transmitData;
     }
 
     setMessage(value){
-        this.message = value
+        this.message = value;
     }
 
     setResponsability(value){
-        this.responsability = value
+        this.responsability = value;
     }
 
-    setEntregarDados(value){
-        this.EntregarDados = value
+    setDeliverData(value){
+        this.deliverData = value;
     }
 
-    setSegmentarDados(value){
-        this.segmentarDados
+    setSegmentData(value){
+        this.segmentData = value;
     }
     
-    setTransmitirDados(value){
-        this.transmitirDados
+    setTransmitData(value){
+        this.transmitData = value;
     }
-
-
-
 
 };
 module.exports = Transport;

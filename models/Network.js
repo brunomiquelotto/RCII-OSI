@@ -3,8 +3,8 @@ class Network {
     constructor(){
         this.message;
         this.responsability;
-        this.selecionarRota;
-        this.direcionarPacote;
+        this.selectRoute;
+        this.directPackage;
     }
 
     setMessage(value){
@@ -15,12 +15,12 @@ class Network {
         this.responsability = value
     }
 
-    setSelecionarRota(value){
-        this.selecionarRota = value
+    setSelectRoute (value) {
+        this.selectRoute = value;
     }
 
-    setDirecionarPacote(value){
-        this.direcionarPacote = value;
+    setDirectPackage (value) {
+        this.directPackage = value;
     }
 
 };
