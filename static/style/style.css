@@ -2,12 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .button {
     border: none;
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
 }
 
 .input {
@@ -53,16 +57,45 @@ body {
 }
 
 .item:hover {
-    background-color: #000;
+    background-color: #00b8d4;
+    color: black;
+    cursor: pointer;
 }
 .menu {
     height: 40px;
     width: 100%;
-    background-color: #d3d3d3;
+    background-color: #00b8d4;
     margin-bottom: 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 
 }
 .menu h1{
     text-align: center;
-    font-family: "Times New Roman", Times, serif;
+    color: white;
+}
+
+.selected {
+    background-color: #00b8d4;
+    color: black;
+}
+
+.right-card {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    width: 50%;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.flex {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+.bold {
+    font-weight: bolder;
 }

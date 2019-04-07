@@ -3,13 +3,13 @@ var fn = function(req, res, next) {
     var application = new Application()
 
     application.setMessage(req.body.text);
-    application.setResponsability("Responsible for the message of the process");
-    application.setCommunicateProcess("Communication between processes");
-    application.setManageNetwork("Managing Network");
-    application.setShareResources("Sharing resources");
-    application.setNetworkServices("Managing network services");
-    application.setServiceDirectory("Managing directory service");
-    application.setSpecializedFunction("Specialized Functions");
+    application.setResponsability("Responsavel pela mensagem do processo");
+    application.setCommunicateProcess("Comunicacao entre processos");
+    application.setManageNetwork("Gerenciando Rede");
+    application.setShareResources("Compartilhando Recursos");
+    application.setNetworkServices("Gerenciando Serviços de Rede");
+    application.setServiceDirectory("Gerenciando Serviço do Diretorio");
+    application.setSpecializedFunction("Funções Especializadas");
 
     req.body[7] = application;
     console.log('Passei na camada Aplicaçao');
