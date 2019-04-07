@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<script src="/knockout.js"></script>
-<script src="/axios.js"></script>
-<link rel="stylesheet" href="/static/style/style.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>RC-II-OSI</title>
+    <script src="/knockout.js"></script>
+    <script src="/axios.js"></script>
+    <link rel="stylesheet" href="/static/style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 <body>
        <div class="card">
@@ -16,7 +17,7 @@
         </header>
         <label for="input">Digite um texto</label>
         <input type="text" id="input" data-bind="value: input" class="input"/>
-        <button data-bind="click: enviaDados" class="button">Chamar</button>
+        <button data-bind="click: enviaDados" class="button">Converter</button>
         <!-- ko if: result -->
         <ul class="list">
             <li class="item" data-bind="text: 'Aplicação: ' + result()[7]"></li>
