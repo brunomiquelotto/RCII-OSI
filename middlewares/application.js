@@ -1,6 +1,6 @@
 var fn = function(req, res, next) {
     const Application = require('../models/Application');
-    var application = new Application(req.body.text)
+    var application = new Application()
 
     application.setMessage(req.body.text);
     application.setResponsability("Responsible for the message of the process");

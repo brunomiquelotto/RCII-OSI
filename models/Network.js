@@ -3,6 +3,8 @@ class Network {
     constructor(){
         this.message;
         this.responsability;
+        this.selectRoute;
+        this.directPackage;
     }
 
     setMessage(value){
@@ -11,6 +13,14 @@ class Network {
 
     setResponsability(value){
         this.responsability = value
+    }
+
+    setSelectRoute (value) {
+        this.selectRoute = value;
+    }
+
+    setDirectPackage (value) {
+        this.directPackage = value;
     }
 
 };

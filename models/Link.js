@@ -3,6 +3,8 @@ class Link {
     constructor(){
         this.message;
         this.responsability;
+        this.error;
+        this.flow;
     }
 
     setMessage(value){
@@ -11,6 +13,18 @@ class Link {
 
     setResponsability(value){
         this.responsability = value
+    }
+
+    setFlow (value) {
+        this.flow = value;
+    }
+
+    validateError(value){
+        if(value === true){
+            this.error = "Fixed error."
+        }else{
+            this.error = "No mistakes in the process."
+        }
     }
 
 };
