@@ -5,6 +5,9 @@ class Link {
         this.responsability;
         this.error;
         this.flow;
+        this.macHeader;
+        this.ipHeader;
+        this.tcpHeader;
     }
 
     setMessage(value){
@@ -25,6 +28,18 @@ class Link {
         }else{
             this.error = "No mistakes in the process."
         }
+    }
+
+    setMacHeader(value) {
+        this.macHeader = value;
+    }
+
+    setIpHeader(value) {
+        this.ipHeader = value;
+    }
+
+    setTcpHeader(value) {
+        this.tcpHeader = value;
     }
 
 };

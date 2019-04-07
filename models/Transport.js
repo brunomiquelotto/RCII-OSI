@@ -1,11 +1,11 @@
 class Transport {
-
     constructor(){
         this.message;
         this.responsability;
         this.deliverData;
         this.segmentData;
         this.transmitData;
+        this.tcpHeader;
     }
 
     setMessage(value){
@@ -26,6 +26,10 @@ class Transport {
     
     setTransmitData(value){
         this.transmitData = value;
+    }
+
+    setTcpHeader(value) {
+        this.tcpHeader = value;
     }
 
 };

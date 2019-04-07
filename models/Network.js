@@ -5,6 +5,8 @@ class Network {
         this.responsability;
         this.selectRoute;
         this.directPackage;
+        this.ipHeader;
+        this.tcpHeader;
     }
 
     setMessage(value){
@@ -21,6 +23,14 @@ class Network {
 
     setDirectPackage (value) {
         this.directPackage = value;
+    }
+
+    setIpHeader(value) {
+        this.ipHeader = value;
+    }
+
+    setTcpHeader(value) {
+        this.tcpHeader = value;
     }
 
 };
