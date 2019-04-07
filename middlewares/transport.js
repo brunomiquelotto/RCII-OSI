@@ -2,8 +2,8 @@ var fn = function(req, res, next) {
     const Transport = require('../models/Transport');
     var transport = new Transport();
 
-    transport.setMessage(req.body[5]['Mensagem']);
-    transport.setResponsability("Responsável por processos que controlam a transferência de dados, cuidando de erros");
+    transport.setMessage(req.body[5]['message']);
+    transport.setResponsability("Divide os dados e segmentos e é responsável pela sua entrega. Garante que a mensagem chegue intacta e em ordem, supervisionando o controle de fluxo e o controle de erros no nível de origem-destino.");
     transport.setDeliverData('Entregando Dados');
     transport.setTransmitData('Transmitindo dados');
     transport.setSegmentData('Segmentando Dados');

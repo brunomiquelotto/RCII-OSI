@@ -4,12 +4,7 @@ class Physical {
         this.message;
         this.responsability;
         this.bits;
-<<<<<<< HEAD
-        this.conexao;
-=======
         this.connection;
->>>>>>> 9fb7946af3a85e2bb4623a39978d1f0476f77251
-
     }
 
     setMessage(value){
@@ -39,12 +34,8 @@ class Physical {
        this.connection = value;
     }
 
-    setBits(value){
-        this.bits = value;
-    }
-    
     setConexao(value){
-        this.conexao = value;
+        this.connection = value;
     }
 
 };

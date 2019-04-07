@@ -2,8 +2,8 @@ var fn = function(req, res, next) {
     const Network = require('../models/Network');
     var network = new Network();
 
-    network.setMessage(req.body[4]['Mensagem']);
-    network.setResponsability('Destina-se a fornecer suporte de comunicação de ponta a ponta para as camadas superiores.');
+    network.setMessage(req.body[4]['message']);
+    network.setResponsability("É responsável pela origem de envio ao destino dos pacotes. É responsável pelo roteamento e determinação lógica da melhor rota.");
     network.setSelectRoute('Rota Selecionada');
     network.setDirectPackage('Pacote Alvo');
     network.setTcpHeader(req.body[4]['tcpHeader']);
