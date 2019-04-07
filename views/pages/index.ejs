@@ -10,25 +10,36 @@
 </head>
 <body>
        <div class="card">
-        <header>
-            <div class="menu">
-                <h1>Camadas OSI</h1>
-            </div>
-        </header>
-        <label for="input">Digite um texto</label>
-        <input type="text" id="input" data-bind="value: input" class="input"/>
-        <button data-bind="click: enviaDados" class="button">Converter</button>
-        <!-- ko if: result -->
-        <ul class="list">
-            <li class="item" data-bind="text: 'Aplicação: ' + result()[7]['message']"></li>
-            <li class="item" data-bind="text: 'Apresentação: ' + result()[6]['message']"></li>
-            <li class="item" data-bind="text: 'Sessão: ' + result()[5]['message']"></li>
-            <li class="item" data-bind="text: 'Transporte: ' + result()[4]['message']"></li>
-            <li class="item" data-bind="text: 'Rede: ' + result()[3]['message']"></li>
-            <li class="item" data-bind="text: 'Enlace: ' + result()[2]['message']"></li>
-            <li class="item" data-bind="text: 'Física: ' + result()[1]['bits']"></li>
-        </ul>
-        <!-- /ko -->
+            <header>
+                <div class="menu">
+                    <h1>Camadas OSI</h1>
+                </div>
+            </header>
+           <div>
+               <label for="input">Digite um texto</label>
+               <input type="text" id="input" data-bind="value: input" class="input"/>
+               <button data-bind="click: enviaDados" class="button">Converter</button>
+           </div>
+           <div class="flex">
+               <!-- ko if: result -->
+               <ul class="list flex-item">
+                   <li class="item" data-bind="text: 'Aplicação: ' + result()[7]['message'], click: function() { select(result()[7]); }, class: (selectedResult() == result()[7] ? 'selected' : '')"></li>
+                   <li class="item" data-bind="text: 'Apresentação: ' + result()[6]['message'], click: function() { select(result()[6]); }, class: (selectedResult() == result()[6] ? 'selected' : '')"></li>
+                   <li class="item" data-bind="text: 'Sessão: ' + result()[5]['message'], click: function() { select(result()[5]); }, class: (selectedResult() == result()[5] ? 'selected' : '')"></li>
+                   <li class="item" data-bind="text: 'Transporte: ' + result()[4]['message'], click: function() { select(result()[4]); }, class: (selectedResult() == result()[4] ? 'selected' : '')"></li>
+                   <li class="item" data-bind="text: 'Rede: ' + result()[3]['message'], click: function() { select(result()[3]); }, class: (selectedResult() == result()[3] ? 'selected' : '')"></li>
+                   <li class="item" data-bind="text: 'Enlace: ' + result()[2]['message'], click: function() { select(result()[2]); }, class: (selectedResult() == result()[2] ? 'selected' : '')"></li>
+                   <li class="item" data-bind="text: 'Física: ' + result()[1]['bits'], click: function() { select(result()[1]); }, class: (selectedResult() == result()[1] ? 'selected' : '')"></li>
+               </ul>
+               <!-- /ko -->
+               <!-- ko with: selectedResult -->
+               <div class="right-card flex-item">
+                   <p><span class="bold">Responsabilidade: </span><span data-bind="text: responsability"></span></p>
+                   <p class="bold">Modelo</p>
+                   <pre data-bind="text: ko.toJSON($data, null, 2);"></pre>
+               </div>
+               <!-- /ko -->
+           </div>
     </div>
 </body>
 </html>
@@ -38,10 +49,16 @@
         var self = this;
         self.input = ko.observable();
         self.result = ko.observable(null);
+        self.selectedResult = ko.observable(null);
         self.enviaDados = function() {
             axios.post('/', { text: self.input() }).then(function(response) {
+                self.selectedResult(null);
                 self.result(response.data);
             })
+        };
+
+        self.select = function(result) {
+            self.selectedResult(result);
         };
     };
 

@@ -43,7 +43,6 @@ body {
 
 .list {
     list-style: none;
-    margin-top: 10px;
 }
 
 .item {
@@ -58,7 +57,9 @@ body {
 }
 
 .item:hover {
-    background-color: #000;
+    background-color: #00b8d4;
+    color: black;
+    cursor: pointer;
 }
 .menu {
     height: 40px;
@@ -73,4 +74,28 @@ body {
 .menu h1{
     text-align: center;
     color: white;
+}
+
+.selected {
+    background-color: #00b8d4;
+    color: black;
+}
+
+.right-card {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    width: 50%;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.flex {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+.bold {
+    font-weight: bolder;
 }
